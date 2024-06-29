@@ -6,10 +6,10 @@ const MessageInput = () => {
       <div className='w-full relative'>
         <input
           type='text'
-          className='border text-md rounded-lg block w-full p-2.5  bg-gray-500 border-black border-2 text-white'
+          className='border text-lg rounded-lg block w-full p-2.5  bg-transparent border-white border-2 text-white'
           placeholder='Send a message'
         />
-        <button type='submit' className='absolute text-yellow-400 inset-y-0 end-0 flex items-center pe-3'>
+        <button type='submit' className='absolute text-yellow-400 inset-y-0 end-0 flex items-center pe-5'>
           <BsSend />
         </button>
       </div>
