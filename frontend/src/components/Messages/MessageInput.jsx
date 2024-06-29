@@ -9,7 +9,7 @@ const MessageInput = () => {
           className='border text-lg rounded-lg block w-full p-2.5  bg-transparent border-white border-2 text-white'
           placeholder='Send a message'
         />
-        <button type='submit' className='absolute text-yellow-400 inset-y-0 end-0 flex items-center pe-5'>
+        <button type='submit' className='absolute text-yellow-500 inset-y-0 end-0 flex items-center pe-5'>
           <BsSend />
         </button>
       </div>

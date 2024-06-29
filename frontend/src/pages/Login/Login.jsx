@@ -12,9 +12,9 @@ const Login = () => {
   return (
     <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
       <div className='h-full p-6 w-full bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60 border-2 border-gray-100'>
-        <h1 className='text-3xl font-semibold text-center text-white'>
+        <h1 className='text-3xl mb-3 font-semibold text-center text-white'>
           Login
-          <span className='text-yellow-400'> ChatApp</span>
+          <span className='text-yellow-500'> ChatApp</span>
         </h1>
 
         <form onSubmit={handleSubmit}>
@@ -43,7 +43,7 @@ const Login = () => {
               onChange={e => setPassword(e.target.value)}
             />
           </div>
-          <Link to='/signup' className='text-md text-white hover:underline hover:text-yellow-300 mt-2 inline-block'>
+          <Link to='/signup' className='text-md text-white hover:underline hover:text-yellow-500 mt-2 inline-block'>
             {"Don't"} have an account?
           </Link>
 

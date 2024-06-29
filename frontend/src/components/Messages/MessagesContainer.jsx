@@ -6,7 +6,7 @@ import { TiMessages } from 'react-icons/ti';
 const MessageContainer = () => {
   const chatSelected = false;
   return (
-    <div className='md:min-w-[450px] flex flex-col'>
+    <div className='w-2/3 flex flex-col'>
       {chatSelected ? (
         <NoChatSelected />
       ) : (
