@@ -45,7 +45,7 @@ const SignUp = () => {
               type='text'
               placeholder='John Doe'
               name='fullName'
-              className='w-full input input-bordered h-15'
+              className='border text-lg rounded-lg block w-full p-2.5 bg-transparent border-white text-yellow-500'
               onChange={handleInputChange}
             />
           </div>
@@ -58,7 +58,7 @@ const SignUp = () => {
               type='text'
               placeholder='john.doe'
               name='userName'
-              className='w-full input input-bordered h-15'
+              className='border text-lg rounded-lg block w-full p-2.5 bg-transparent border-white text-yellow-500'
               onChange={handleInputChange}
             />
           </div>
@@ -71,7 +71,7 @@ const SignUp = () => {
               type='password'
               placeholder='Enter Password'
               name='password'
-              className='w-full input input-bordered h-15'
+              className='border text-lg rounded-lg block w-full p-2.5 bg-transparent border-white text-yellow-500'
               onChange={handleInputChange}
             />
           </div>
@@ -84,7 +84,7 @@ const SignUp = () => {
               type='password'
               placeholder='Confirm Password'
               name='confirmPassword'
-              className='w-full input input-bordered h-15'
+              className='border text-lg rounded-lg block w-full p-2.5 bg-transparent border-white text-yellow-500'
               onChange={handleInputChange}
             />
           </div>
@@ -100,7 +100,7 @@ const SignUp = () => {
               disabled={isLoading}
               className='btn btn-block btn-md mt-4 border btn-outline btn-warning border-slate-200'
             >
-              Sign Up
+              {isLoading ? <span className='loading loading-spinner '></span> : <span>Signup</span>}
             </button>
           </div>
         </form>

@@ -1,12 +1,21 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useLogin } from '../../hooks/useLogin';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const { isLoading, login } = useLogin();
+  const [values, setValues] = useState({
+    userName: '',
+    password: '',
+  });
 
-  const handleSubmit = async e => {
+  const handleInput = e => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const handleLogin = async e => {
     e.preventDefault();
+    await login(values);
   };
 
   return (
@@ -17,7 +26,7 @@ const Login = () => {
           <span className='text-yellow-500'> ChatApp</span>
         </h1>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleLogin}>
           <div>
             <label className='label p-2'>
               <span className='text-base label-text text-white'>Username</span>
@@ -25,9 +34,9 @@ const Login = () => {
             <input
               type='text'
               placeholder='Enter username'
-              className='w-full input input-bordered h-15'
-              value={username}
-              onChange={e => setUsername(e.target.value)}
+              className='border text-lg rounded-lg block w-full p-2.5 bg-transparent border-white text-yellow-500'
+              name='userName'
+              onChange={handleInput}
             />
           </div>
 
@@ -38,9 +47,9 @@ const Login = () => {
             <input
               type='password'
               placeholder='Enter Password'
-              className='w-full input input-bordered h-15'
-              value={password}
-              onChange={e => setPassword(e.target.value)}
+              className='border text-lg rounded-lg block w-full p-2.5 bg-transparent border-white text-yellow-500'
+              name='password'
+              onChange={handleInput}
             />
           </div>
           <Link to='/signup' className='text-md text-white hover:underline hover:text-yellow-500 mt-2 inline-block'>
@@ -48,8 +57,11 @@ const Login = () => {
           </Link>
 
           <div>
-            <button className='btn btn-block btn-md mt-4 border btn-outline btn-warning border-slate-200'>
-              Sign Up
+            <button
+              disabled={isLoading}
+              className='btn btn-block btn-md mt-4 border btn-outline btn-warning border-slate-200'
+            >
+              {isLoading ? <span className='loading loading-spinner '></span> : <span>Login</span>}
             </button>
           </div>
         </form>
