@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 
 import { conversationStore } from '../store/conversationStore';
 
-export const useMessage = () => {
+export const useSendMessage = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const { selectedConversation, messages, setMessages } = conversationStore();
