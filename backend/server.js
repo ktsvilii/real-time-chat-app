@@ -5,13 +5,13 @@ import cookieParser from 'cookie-parser';
 import authRoutes from './routes/auth.routes.js';
 import messageRoutes from './routes/message.routes.js';
 import userRoutes from './routes/user.routes.js';
+import { app, server } from './socket/socket.js';
 
 import connectToMongo from './db/connectToMongo.js';
 
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
-const app = express();
 
 // app.get('/', (req, res) => {
 //   res.send('Hello world!');
@@ -24,7 +24,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/message', messageRoutes);
 app.use('/api/users', userRoutes);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   connectToMongo();
   console.log(`App is running on port ${PORT}`);
 });
