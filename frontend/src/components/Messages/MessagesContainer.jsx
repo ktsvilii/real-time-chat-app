@@ -19,7 +19,9 @@ const MessageContainer = () => {
       ) : (
         <>
           <div className='bg-transparent p-5'>
-            <span className='text-warning font-bold'>{selectedConversation.fullName}</span>
+            <span className='text-warning font-bold'>
+              {selectedConversation.fullName}
+            </span>
           </div>
 
           <div className='divider before:bg-white after:bg-white my-0 py-0 h-0 mb-4' />
